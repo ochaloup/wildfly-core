@@ -67,7 +67,7 @@ public class SuspendController implements Service<SuspendController> {
 
     public void setStartSuspended(boolean startSuspended) {
         this.startSuspended = startSuspended;
-        state = State.SUSPENDED;
+        state = startSuspended ? State.SUSPENDED : State.RUNNING;
     }
 
     public synchronized void suspend(long timeoutMillis) {
